@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.editor-icons {
+		@apply inline-flex text-white border-solid border-2 p-2 rounded-md bg-black ml-2;
+	}
+}
