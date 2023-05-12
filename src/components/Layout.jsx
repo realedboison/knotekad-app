@@ -1,5 +1,3 @@
-// import '../App.css';
-
 import MainEditor from './MainEditor';
 import Menu from './Menu';
 import React from 'react';
