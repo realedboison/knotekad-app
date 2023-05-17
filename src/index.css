@@ -4,6 +4,16 @@
 
 @layer components {
 	.editor-icons {
-		@apply inline-flex text-white border-solid border-2 p-2 rounded-md bg-black ml-2;
+		@apply flex h-10 w-10 items-center justify-center mr-1 bg-black text-white border-solid border-2 rounded-md;
+
+		/* @apply inline-flex text-white border-solid border-2 p-2 rounded-md bg-black ml-1 md:mb-2; */
+	}
+
+	.bg-debug {
+		box-sizing: border-box;
+		background: rgba(255, 196, 0, 0.61) !important;
+	}
+	.outline-debug {
+		outline: 5px solid rgba(255, 38, 0, 0.445) !important;
 	}
 }

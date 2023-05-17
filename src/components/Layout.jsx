@@ -21,7 +21,8 @@ function Layout() {
 				</div>
 			</div>
 			{/* grid-rows-3   */}
-			<div class="grid w-full md:grid-cols-3 md:grid-rows bg-gray-500 mx-auto xl:max-w-screen-xl lg:max-w-screen-xl h-screen">
+			<div class="grid w-full md:grid-cols-3 md:grid-rows bg-gray-500 mx-auto  h-screen">
+				{/* xl:max-w-screen-xl lg:max-w-screen-xl */}
 				<div class="px-10 md:col-span-2 col-span-1 bg-gray-200">
 					<p>
 						<MainEditor />
