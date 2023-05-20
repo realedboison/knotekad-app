@@ -4,16 +4,29 @@
 
 @layer components {
 	.editor-icons {
-		@apply flex h-10 w-10 items-center justify-center mr-1 bg-black text-white border-solid border-2 rounded-md;
+		@apply flex p-2 items-center justify-center m-1 bg-black text-white border-solid border-2 rounded-md;
+
+		/* md:p-2 lg:p-2 xl:p-2 */
 
 		/* @apply inline-flex text-white border-solid border-2 p-2 rounded-md bg-black ml-1 md:mb-2; */
 	}
+	.not-last-child {
+		:not(:last-child) ;
+	}
 
-	.bg-debug {
+	.background-debug {
 		box-sizing: border-box;
 		background: rgba(255, 196, 0, 0.61) !important;
 	}
 	.outline-debug {
 		outline: 5px solid rgba(255, 38, 0, 0.445) !important;
+	}
+}
+
+@layer utilities {
+	.not\:last-child > * {
+		/* Styles for elements except the last child */
+		/* For example, add a margin-bottom of 2rem */
+		margin-right: none;
 	}
 }

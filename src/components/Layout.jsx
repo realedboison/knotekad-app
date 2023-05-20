@@ -5,8 +5,8 @@ import SearchBar from './Search';
 
 function Layout() {
 	return (
-		<div class="xl:max-w-screen-xl lg:max-w-screen-xl mx-auto bg-red-500">
-			<div class="p-10 flex justify-between items-center">
+		<div class="xl:max-w-screen-xl w-fit mx-auto lg:max-w-screen-xl bg-red-500">
+			<div class="p-5 flex justify-between items-center">
 				<h1 class="text-4xl">😂</h1>
 
 				<div class="hidden md:block">Lorem ipsum dolor sit amet.</div>
@@ -21,21 +21,22 @@ function Layout() {
 				</div>
 			</div>
 			{/* grid-rows-3   */}
-			<div class="grid w-full md:grid-cols-3 md:grid-rows bg-gray-500 mx-auto  h-screen">
+			<div class="grid w-full md:grid-cols-3 md:grid-rows bg-gray-500 mx-auto h-screen">
 				{/* xl:max-w-screen-xl lg:max-w-screen-xl */}
-				<div class="px-10 md:col-span-2 col-span-1 bg-gray-200">
-					<p>
-						<MainEditor />
-					</p>
-				</div>
-				<div class="px-10 col-span bg-blue-400 overflow-au">
+				<div class="px-5 md:col-span-2 col-span bg-green-800">
 					<div>
-						<h3 class="pt-10 pb-4 text font-small text-2xl border-solid border-blue-700 border-b- ">
+						<MainEditor />
+					</div>
+				</div>
+				{/* ------------- SEARCH THEME AREA --------------- */}
+				<div class="px-5 col-span bg-blue-400 overflow-n w-fit">
+					<div className="">
+						<h3 class="pt-10 pb-4 text font-small text-2xl border-solid border-blue-700 border-b- w-f">
 							Search Theme
 						</h3>
-						<div
-							className="bg-gradient-to-l from-blue-900 to-blue-600 border- border-
-						 pb-2 rounded-xl">
+						{/* className="bg-gradient-to-l from-blue-900 to-blue-600 border- border-
+						 pb-2 rounded-xl" */}
+						<div>
 							<SearchBar />
 						</div>
 					</div>

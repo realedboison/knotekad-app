@@ -28,21 +28,25 @@ const MenuBar = ({ editor }) => {
 	}
 
 	return (
-		<div className="flex w-2/2 p-2 mt-10 items-center justify-center bg-gray-400 outline-debug">
+		<div className="flex mt-10 justify-between content-center bg-black p-4 rounded-xl">
+			{/* items-center justify-center w-2/2 */}
 			{/* xl:max-w-screen-xl lg:max-w-screen-xl */}
 			{/* <div className="bg-gray-400 h-10 flex flex-wrap mt-10 gap-x-4 gap-y-8 bl"></div> */}
-			{/*  mt-10 pt-2 / w-[100%] xl:h-[60px] lg:h[60px] py-[10px] pl-[2px] pr-[10px] items-center  border-solid border-black border-2 rounded-md  */}
+			{/*  mt-10 pt-2 / w-[100%] xl:h-[60px] lg:h[60px] py-[10px] pl-[2px] pr-[10px] items-center    */}
 			{/* <div className="justify-between flex items-start"> */}
 
 			{/* flex flex-wrap */}
 			{/* lg:block */}
-			<div className="flex justify-center">
+			{/* <div className="flex"> */}
+			<div className="flex">
+				{/*text-sm lg:text-sm lg:text-lg xl:text-2xl lg:text-xl md:text-3xl lg:text-4xl */}
+				{/* className="" */}
 				<div className="editor-icons">
 					<button
 						onClick={() => editor.chain().focus().toggleBold().run()}
 						disabled={!editor.can().chain().focus().toggleBold().run()}
 						className={editor.isActive('bold') ? 'is-active' : 'text-gray-400'}>
-						<FaBold size={22} />
+						<FaBold className="text-sm xl:text-2xl lg:text-xl" />
 					</button>
 				</div>
 				<div className="editor-icons">
@@ -52,7 +56,7 @@ const MenuBar = ({ editor }) => {
 						className={
 							editor.isActive('italic') ? 'is-active' : 'text-gray-400'
 						}>
-						<FaItalic size={22} />
+						<FaItalic className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
 				</div>
 				<div className="editor-icons">
@@ -62,7 +66,7 @@ const MenuBar = ({ editor }) => {
 						className={
 							editor.isActive('strike') ? 'is-active' : 'text-gray-400'
 						}>
-						<FaStrikethrough size={22} />
+						<FaStrikethrough className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
 				</div>
 				<div className="editor-icons">
@@ -70,7 +74,7 @@ const MenuBar = ({ editor }) => {
 						onClick={() => editor.chain().focus().toggleCode().run()}
 						disabled={!editor.can().chain().focus().toggleCode().run()}
 						className={editor.isActive('code') ? 'is-active' : 'text-gray-400'}>
-						<FaCode size={22} />
+						<FaCode className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
 				</div>
 
@@ -85,7 +89,7 @@ const MenuBar = ({ editor }) => {
 								? 'is-active'
 								: 'text-gray-400'
 						}>
-						<FaHeading size={22} />
+						<FaHeading className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
 				</div>
 
@@ -95,7 +99,7 @@ const MenuBar = ({ editor }) => {
 						className={
 							editor.isActive('bulletList') ? 'is-active' : 'text-gray-400'
 						}>
-						<FaListUl size={22} />
+						<FaListUl className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
 				</div>
 				<div className="editor-icons">
@@ -104,7 +108,7 @@ const MenuBar = ({ editor }) => {
 						className={
 							editor.isActive('orderedList') ? 'is-active' : 'text-gray-400'
 						}>
-						<GoListOrdered size={22} />
+						<GoListOrdered className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
 				</div>
 				<div className="editor-icons">
@@ -113,7 +117,7 @@ const MenuBar = ({ editor }) => {
 						className={
 							editor.isActive('codeBlock') ? 'is-active' : 'text-gray-400'
 						}>
-						<RiFileCodeLine size={22} />
+						<RiFileCodeLine className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
 				</div>
 				<div className="editor-icons">
@@ -122,7 +126,7 @@ const MenuBar = ({ editor }) => {
 						className={
 							editor.isActive('blockquote') ? 'is-active' : 'text-gray-400'
 						}>
-						<GrBlockQuote size={22} />
+						<GrBlockQuote className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
 				</div>
 				<div className="editor-icons">
@@ -131,26 +135,33 @@ const MenuBar = ({ editor }) => {
 						className={
 							editor.isActive('underline') ? 'is-active' : 'text-gray-400'
 						}>
-						<FaUnderline size={22} />
+						<FaUnderline className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
 				</div>
-				<div className="flex ml-10">
+			</div>
+			{/* UNDO - REDO */}
+			<div className=" ">
+				{/* flex justify-between */}
+				{/* flex  p-2 mt-10 bg-gray-4 oline-debug bg-debug */}
+				<div className="flex bg-gray-4">
+					{/* flex ml-10 */}
 					<div className="editor-icons">
 						<button
 							onClick={() => editor.chain().focus().undo().run()}
 							disabled={!editor.can().chain().focus().undo().run()}>
-							<FaUndo size={22} />
+							<FaUndo className="text-sm  xl:text-2xl lg:text-xl" />
 						</button>
 					</div>
 					<div className="editor-icons">
 						<button
 							onClick={() => editor.chain().focus().redo().run()}
 							disabled={!editor.can().chain().focus().redo().run()}>
-							<FaRedo size={22} />
+							<FaRedo className="text-sm   xl:text-2xl lg:text-xl" />
 						</button>
 					</div>
 				</div>
 			</div>
+			{/* </div> */}
 
 			{/* <div className="ml-auto flex"> */}
 		</div>
