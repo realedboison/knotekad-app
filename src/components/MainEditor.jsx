@@ -28,7 +28,7 @@ const MenuBar = ({ editor }) => {
 	}
 
 	return (
-		<div className="flex mt-10 justify-between content-center bg-black p-4 rounded-xl">
+		<div className="flex mt-5 justify-between content-center bg-black p-4 rounded-xl">
 			{/* items-center justify-center w-2/2 */}
 			{/* xl:max-w-screen-xl lg:max-w-screen-xl */}
 			{/* <div className="bg-gray-400 h-10 flex flex-wrap mt-10 gap-x-4 gap-y-8 bl"></div> */}

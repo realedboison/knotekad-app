@@ -5,8 +5,10 @@ import SearchBar from './Search';
 
 function Layout() {
 	return (
-		<div class="xl:max-w-screen-xl w-fit mx-auto lg:max-w-screen-xl bg-red-500">
-			<div class="p-5 flex justify-between items-center">
+		// CONTAINER ---
+		<div class="xl:max-w-screen-xl w-fit mx-auto lg:max-w-screen-xl bg-yellow-   mb-20 outline-deb bg-white rounded-2xl">
+			{/* ---------- MENU ---------- */}
+			<div class="p-5 flex rounded-2xl justify-between outline-d items-center my-4  bg-purple-400">
 				<h1 class="text-4xl">😂</h1>
 
 				<div class="hidden md:block">Lorem ipsum dolor sit amet.</div>
@@ -20,18 +22,19 @@ function Layout() {
 					</nav>
 				</div>
 			</div>
+			{/* ------------ MAIN EDITOR ------------------- */}
 			{/* grid-rows-3   */}
-			<div class="grid w-full md:grid-cols-3 md:grid-rows bg-gray-500 mx-auto h-screen">
+			<div class="grid gap-4 w-full md:grid-cols-3 md:grid-rows bg-white">
 				{/* xl:max-w-screen-xl lg:max-w-screen-xl */}
-				<div class="px-5 md:col-span-2 col-span bg-green-800">
+				<div class="px-5 md:col-span-2 col-span bg-green-800 rounded-2xl">
 					<div>
 						<MainEditor />
 					</div>
 				</div>
 				{/* ------------- SEARCH THEME AREA --------------- */}
-				<div class="px-5 col-span bg-blue-400 overflow-n w-fit">
+				<div class="px-5 col-span bg-blue-400 overflow-n w-fit rounded-2xl">
 					<div className="">
-						<h3 class="pt-10 pb-4 text font-small text-2xl border-solid border-blue-700 border-b- w-f">
+						<h3 class="pt-5 pb-4 text font-small text-2xl border-solid border-blue-700 border-b- w-f">
 							Search Theme
 						</h3>
 						{/* className="bg-gradient-to-l from-blue-900 to-blue-600 border- border-
