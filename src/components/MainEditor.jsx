@@ -28,7 +28,7 @@ const MenuBar = ({ editor }) => {
 	}
 
 	return (
-		<div className="flex mt-5 justify-between content-center bg-black p-4 rounded-xl">
+		<div className="sticky top-0 flex z-10 mt- justify-between content-center bg-gradient-to-r from-gray-700 via-gray-900 to-black p-4 rounded-xl">
 			{/* items-center justify-center w-2/2 */}
 			{/* xl:max-w-screen-xl lg:max-w-screen-xl */}
 			{/* <div className="bg-gray-400 h-10 flex flex-wrap mt-10 gap-x-4 gap-y-8 bl"></div> */}
@@ -89,7 +89,7 @@ const MenuBar = ({ editor }) => {
 								? 'is-active'
 								: 'text-gray-400'
 						}>
-						<FaHeading className="text-sm  xl:text-2xl lg:text-xl" />
+						<FaHeading className="text-sm xl:text-2xl lg:text-xl" />
 					</button>
 				</div>
 
@@ -175,9 +175,29 @@ const TipTap = () => {
 	});
 
 	return (
-		<div>
+		<div className="bg-gray-600 h-[30rem] rounded-xl focus:border-none overflow-auto">
+			{/* focus:outline-none focus:ring-none focus:ring-blue-500 */}
 			<MenuBar editor={editor} />
-			<EditorContent editor={editor} />
+			<EditorContent
+				editor={editor}
+				className="p-5 text-white z-0"
+				// className="border rounded-xl border-gray-300 h-60 p-2 "
+				// --- prose styles
+				//   min-height: 200px;
+				//    height: auto;
+				//   padding: 0.5rem;
+			/>
+
+			<style>
+				{`
+            .ProseMirror {
+              background-color: transparent;
+              border: none;
+              outline: none;
+              resize: none;
+
+            }`}
+			</style>
 		</div>
 	);
 };

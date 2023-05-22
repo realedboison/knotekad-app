@@ -6,7 +6,7 @@ import SearchBar from './Search';
 function Layout() {
 	return (
 		// CONTAINER ---
-		<div class="xl:max-w-screen-xl w-fit mx-auto lg:max-w-screen-xl bg-yellow-   mb-20 outline-deb bg-white rounded-2xl">
+		<div class="xl:max-w-screen-xl w-fit mx-auto lg:max-w-screen-xl bg-yellow- mb-20 outline-debug bg-white rounded-2xl">
 			{/* ---------- MENU ---------- */}
 			<div class="p-5 flex rounded-2xl justify-between outline-d items-center my-4  bg-purple-400">
 				<h1 class="text-4xl">😂</h1>
@@ -26,7 +26,7 @@ function Layout() {
 			{/* grid-rows-3   */}
 			<div class="grid gap-4 w-full md:grid-cols-3 md:grid-rows bg-white">
 				{/* xl:max-w-screen-xl lg:max-w-screen-xl */}
-				<div class="px-5 md:col-span-2 col-span bg-green-800 rounded-2xl">
+				<div class="px-5 pt-5 md:col-span-2 col-span bg-gray-400 rounded-2xl">
 					<div>
 						<MainEditor />
 					</div>

@@ -10,9 +10,6 @@
 
 		/* @apply inline-flex text-white border-solid border-2 p-2 rounded-md bg-black ml-1 md:mb-2; */
 	}
-	.not-last-child {
-		:not(:last-child) ;
-	}
 
 	.background-debug {
 		box-sizing: border-box;
