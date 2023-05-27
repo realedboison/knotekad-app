@@ -1,5 +1,3 @@
-import '../App.css';
-
 import { EditorContent, useEditor } from '@tiptap/react';
 import {
 	FaBold,
@@ -22,7 +20,6 @@ import Underline from '@tiptap/extension-underline';
 
 const MenuBar = ({ editor }) => {
 	// const isActive = editor.isActive('undo');
-
 	if (!editor) {
 		return null;
 	}
@@ -144,7 +141,6 @@ const MenuBar = ({ editor }) => {
 				{/* flex justify-between */}
 				{/* flex  p-2 mt-10 bg-gray-4 oline-debug bg-debug */}
 				<div className="flex bg-gray-4">
-					{/* flex ml-10 */}
 					<div className="editor-icons">
 						<button
 							onClick={() => editor.chain().focus().undo().run()}
@@ -168,38 +164,30 @@ const MenuBar = ({ editor }) => {
 	);
 };
 
-const TipTap = () => {
+export const Tiptap = ({ setDescription }) => {
 	const editor = useEditor({
 		extensions: [StarterKit, Underline],
-		content: ` `,
+		content: ``,
+
+		onUpdate: ({ editor }) => {
+			const html = editor.getHTML();
+			setDescription(html);
+		},
 	});
 
 	return (
 		<div className="bg-gray-600 h-[30rem] rounded-xl focus:border-none overflow-auto">
 			{/* focus:outline-none focus:ring-none focus:ring-blue-500 */}
 			<MenuBar editor={editor} />
-			<EditorContent
-				editor={editor}
-				className="p-5 text-white z-0"
-				// className="border rounded-xl border-gray-300 h-60 p-2 "
-				// --- prose styles
-				//   min-height: 200px;
-				//    height: auto;
-				//   padding: 0.5rem;
-			/>
+			<EditorContent editor={editor} className="p-5 text-white z-0" />
 
 			<style>
-				{`
-            .ProseMirror {
+				{`.ProseMirror {
               background-color: transparent;
               border: none;
-              outline: none;
-              resize: none;
-
-            }`}
+              outline: none; 
+              resize: none;}`}
 			</style>
 		</div>
 	);
 };
-
-export default TipTap;

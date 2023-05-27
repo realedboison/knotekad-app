@@ -23,7 +23,7 @@ const MainMenu = () => {
 			{/* Menu button */}
 			<button
 				onClick={() => setIsOpen(!isOpen)}
-				className="bg-gray-800 text-white px-2 py-2 rounded-md cursor-pointer md:hidden">
+				className="bg-gray-800 text-white px-2  py-2 rounded-md cursor-pointer md:hidden">
 				<div className="">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

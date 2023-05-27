@@ -1,69 +1,173 @@
-import MainEditor from './MainEditor';
+import React, { useState } from 'react';
+
 import Menu from './Menu';
-import React from 'react';
 import SearchBar from './Search';
+import { Tiptap } from './TipTap';
 
 function Layout() {
+	const [description, setDescription] = useState('');
+
 	return (
 		// CONTAINER ---
-		<div class="xl:max-w-screen-xl w-fit mx-auto lg:max-w-screen-xl bg-yellow- mb-20 outline-debug bg-white rounded-2xl">
-			{/* ---------- MENU ---------- */}
-			<div class="p-5 flex rounded-2xl justify-between outline-d items-center my-4  bg-purple-400">
-				<h1 class="text-4xl">😂</h1>
+		<div className="w rounded-xl mx-auto">
+			<div class="xl:max-w-screen-xl overflow-hidden mx-auto lg:max-w-screen-xl  mb-20 rounded-2xl h-[812px]">
+				{/* ---------- MENU ---------- */}
+				<div class="p-5 flex rounded-2xl justify-between outline-d items-center my-4 bg-indigo-400">
+					<h1 class="text-4xl">😂</h1>
 
-				<div class="hidden md:block">Lorem ipsum dolor sit amet.</div>
+					<div class="hidden md:block">Lorem ipsum dolor sit amad.</div>
 
-				<div class="flex">
-					<div>
-						<p class="hidden md:block">Lorem, ipsum.</p>
-					</div>
-					<nav>
-						<Menu />
-					</nav>
-				</div>
-			</div>
-			{/* ------------ MAIN EDITOR ------------------- */}
-			{/* grid-rows-3   */}
-			<div class="grid gap-4 w-full md:grid-cols-3 md:grid-rows bg-white">
-				{/* xl:max-w-screen-xl lg:max-w-screen-xl */}
-				<div class="px-5 pt-5 md:col-span-2 col-span bg-gray-400 rounded-2xl">
-					<div>
-						<MainEditor />
-					</div>
-				</div>
-				{/* ------------- SEARCH THEME AREA --------------- */}
-				<div class="px-5 col-span bg-blue-400 overflow-n w-fit rounded-2xl">
-					<div className="">
-						<h3 class="pt-5 pb-4 text font-small text-2xl border-solid border-blue-700 border-b- w-f">
-							Search Theme
-						</h3>
-						{/* className="bg-gradient-to-l from-blue-900 to-blue-600 border- border-
-						 pb-2 rounded-xl" */}
+					<div class="flex">
 						<div>
-							<SearchBar />
+							<p class="hidden md:block">Lorem, ipsum.</p>
 						</div>
+						<nav>
+							<Menu />
+						</nav>
 					</div>
-					<p className="py-10">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio
-						doloribus dignissimos corporis nihil voluptatum nulla autem eius
-						fuga eveniet architecto enim ea unde natus molestiae nemo velit sed
-						debitis fugit iure earum minus. Lorem ipsum dolor sit amet,
-						consectetur adipisicing elit. Cupiditate ratione eius quos quae
-						obcaecati, corporis nisi quam iste alias labore possimus illo
-						doloremque doloribus tempore voluptas rem veniam? Vero assumenda
-						nesciunt tempora magnam ab et, commodi omnis cum sint corporis sunt?
-						Tenetur pariatur impedit officia sapiente totam, deleniti laborum
-						magnam ipsam a ea, commodi hic. Ut cum debitis velit? Architecto
-						expedita, quibusdam pariatur magnam deserunt distinctio labore ullam
-						repellat dolorem facilis, quasi atque ab voluptatum? Expedita culpa
-						omnis officiis enim. Lorem ipsum corporis suscipit maxime accusamus?
-						Voluptas cupiditate sequi ducimus quas dicta possimus voluptatem,
-						est illum! Sed distinctio in placeat molestiae ipsa voluptas totam
-						eveniet excepturi repellendus maiores recusandae, velit adipisci
-						corporis
-					</p>
 				</div>
-				{/* <div class="col-span  bg-green-500">Box 3</div> */}
+				{/* ------------ MAIN EDITOR ------------------- */}
+				{/* grid-rows-3   */}
+				<div class="grid gap-4 w-full md:grid-cols-3 md:grid-rows  rounded-2xl">
+					{/* xl:max-w-screen-xl lg:max-w-screen-xl h-[620px]*/}
+					<div class="px-5 pt-5 md:col-span-2 col-span bg-purple-400 rounded-2xl h-[700px]">
+						<div>
+							{/* ------- EDITOR --------- */}
+							<Tiptap setDescription={setDescription} />
+							{/* ------- OUTPUT --------- */}
+							{/* <div className="mt-20 bg-gray-500 h-[30rem] rounded-xl focus:border-none overflow">
+								<EditorOutput description={description} />
+							</div> */}
+						</div>
+
+						{/* <div>show the output</div> */}
+
+						{/* <div> */}
+						{/* <TipTap setDesc={setDesc} /> */}
+						{/*  */}
+						{/* <div className="">{parser(desc)}</div> */}
+						{/* </div> */}
+					</div>
+
+					{/* ------------- SEARCH THEME AREA --------------- */}
+					{/* h-[620px] */}
+					<div class=" col-span h-m bg-blue-400 h-[700px] rounded-2xl">
+						<div className="px-5 bg-blue-600 rounded-2xl">
+							<h3 class="pt-5 pb-4 text font-small text-2xl border-solid border-blue-700  w-full">
+								Search Theme
+							</h3>
+							{/* className="bg-gradient-to-l from-blue-900 to-blue-600 border- border-
+						 pb-2 rounded-xl" */}
+							<div className="pb-8">
+								<SearchBar />
+							</div>
+						</div>
+						<p className="pl-5 w-ful pr-5 h-[75%] overflow-auto mt-2">
+							{/* Far far away, behind the word mountains, far from the countries
+							Vokalia and Consonantia, there live the blind texts. Separated
+							they live in Bookmarksgrove right at the coast of the decided to
+							where they abused her for their projects again and again. */}
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+							commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+							penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+							Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
+							sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
+							vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
+							imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
+							mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
+							semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
+							porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem
+							ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus
+							viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean
+							imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper
+							ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus,
+							tellus eget condimentum rhoncus, sem quam semper libero, sit amet
+							adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus
+							pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt
+							tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam
+							quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis
+							leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis
+							magna. Sed consequat, leo eget bibendum sodales, augue velit
+							cursus nunc, quis gravida magna mi a libero. Fusce vulputate
+							eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis
+							sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras
+							ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum
+							primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+							In ac dui quis mi consectetuer lacinia. Nam pretium turpis et
+							arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet
+							iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu,
+							accumsan a, consectetuer eget, posuere ut, mauris. Praesent
+							adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy
+							metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut
+							eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit
+							amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec
+							mollis hendrerit risus. Phasellus nec sem in justo pellentesque
+							facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque.
+							Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.
+							Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
+							imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa.
+							Sed cursus turpis vitae tortor. Donec posuere vulputate arcu.
+							Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in
+							faucibus orci luctus et ultrices posuere cubilia Curae; Sed
+							aliquam, nisi quis porttitor congue, elit erat euismod orci, ac
+							placerat dolor lectus quis orci. Phasellus consectetuer vestibulum
+							elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
+							nunc. Vestibulum fringilla pede sit amet augue. In turpis.
+							Pellentesque posuere. Praesent turpis. Aenean posuere, tortor sed
+							cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna
+							dolor sagittis lacus. Donec elit libero, sodales nec, volutpat a,
+							suscipit non, turpis. Nullam sagittis. Suspendisse pulvinar, augue
+							ac venenatis condimentum, sem libero volutpat nibh, nec
+							pellentesque velit pede quis nunc. Vestibulum ante ipsum primis in
+							faucibus orci luctus et ultrices posuere cubilia Curae; Fusce id
+							purus. Ut varius tincidunt libero. Phasellus dolor. Maecenas
+							vestibulum mollis diam. Pellentesque ut neque. Pellentesque
+							habitant morbi tristique senectus et netus et malesuada fames ac
+							turpis egestas. In dui magna, posuere eget, vestibulum et, tempor
+							auctor, justo. In ac felis quis tortor malesuada pretium.
+							Pellentesque auctor neque nec urna. Proin sapien ipsum, porta a,
+							auctor quis, euismod ut, mi. Aenean viverra rhoncus pede.
+							Pellentesque habitant morbi tristique senectus et netus et
+							malesuada fames ac turpis egestas. Ut non enim eleifend felis
+							pretium feugiat. Vivamus quis mi. Phasellus a est. Phasellus
+							magna. In hac habitasse platea dictumst. Curabitur at lacus ac
+							velit ornare lobortis. Curabitur a felis in nunc fringilla
+							tristique. Morbi mattis ullamcorper velit. Phasellus gravida
+							semper nisi. Nullam vel sem. Pellentesque libero tortor, tincidunt
+							et, tincidunt eget, semper nec, quam. Sed hendrerit. Morbi ac
+							felis. Nunc egestas, augue at pellentesque laoreet, felis eros
+							vehicula leo, at malesuada velit leo quis pede. Donec interdum,
+							metus et hendrerit aliquet, dolor diam sagittis ligula, eget
+							egestas libero turpis vel mi. Nunc nulla. Fusce risus nisl,
+							viverra et, tempor et, pretium in, sapien. Donec venenatis
+							vulputate lorem. Morbi nec metus. Phasellus blandit leo ut odio.
+							Maecenas ullamcorper, dui et placerat feugiat, eros pede varius
+							nisi, condimentum viverra felis nunc et lorem. Sed magna purus,
+							fermentum eu, tincidunt eu, varius ut, felis. In auctor lobortis
+							lacus. Quisque libero metus, condimentum nec, tempor a, commodo
+							mollis, magna. Vestibulum ullamcorper mauris at ligula. Fusce
+							fermentum. Nullam cursus lacinia erat. Praesent blandit laoreet
+							nibh. Fusce convallis metus id felis luctus adipiscing.
+							Pellentesque egestas, neque sit amet convallis pulvinar, justo
+							nulla eleifend augue, ac auctor orci leo non est. Quisque id mi.
+							Ut tincidunt tincidunt erat. Etiam feugiat lorem non metus.
+							Vestibulum dapibus nunc ac augue. Curabitur vestibulum aliquam
+							leo. Praesent egestas neque eu enim. In hac habitasse platea
+							dictumst. Fusce a quam. Etiam ut purus mattis mauris sodales
+							aliquam. Curabitur nisi. Quisque malesuada placerat nisl. Nam
+							ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Sed
+							augue ipsum, egestas nec, vestibulum et, malesuada adipiscing,
+							dui. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi
+							congue nunc, vitae euismod ligula urna in dolor. Mauris
+							sollicitudin fermentum libero. Praesent nonummy mi in odio. Nunc
+							interdum lacus sit amet orci. Vestibulum rutrum, mi nec elementum
+							vehicula, eros quam gravida nisl, id fringilla neque ante vel mi.
+							Morbi mollis tellus ac sapien. Phasellus volutpat, metus eget
+							egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut
+							lacus. Fusce vel dui. Sed
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

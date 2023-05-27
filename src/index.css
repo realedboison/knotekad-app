@@ -1,14 +1,40 @@
 @tailwind base;
+
+/* Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: var(--secondary) var(--primary);
+}
+
+:root {
+	--primary: rebeccapurple;
+	--secondary: cornflowerblue;
+	/* background-color: aqua; */
+	background-color: rgb(0, 0, 0);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+	width: 15px;
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--primary);
+	border-radius: 1rem;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--secondary);
+	border-radius: 1rem;
+	border: 3px solid var(--primary);
+}
+
 @tailwind components;
 @tailwind utilities;
 
 @layer components {
 	.editor-icons {
 		@apply flex p-2 items-center justify-center m-1 bg-black text-white border-solid border-2 rounded-md;
-
-		/* md:p-2 lg:p-2 xl:p-2 */
-
-		/* @apply inline-flex text-white border-solid border-2 p-2 rounded-md bg-black ml-1 md:mb-2; */
 	}
 
 	.background-debug {
@@ -17,13 +43,5 @@
 	}
 	.outline-debug {
 		outline: 5px solid rgba(255, 38, 0, 0.445) !important;
-	}
-}
-
-@layer utilities {
-	.not\:last-child > * {
-		/* Styles for elements except the last child */
-		/* For example, add a margin-bottom of 2rem */
-		margin-right: none;
 	}
 }
