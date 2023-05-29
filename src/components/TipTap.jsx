@@ -25,24 +25,27 @@ const MenuBar = ({ editor }) => {
 	}
 
 	return (
-		<div className="sticky top-0 flex z-10 mt- justify-between content-center bg-gradient-to-r from-gray-700 via-gray-900 to-black p-4 rounded-xl">
+		<div className="sticky xl:max-w-screen-xl lg:max-w-screen-xl top-0 flex z-10 mt- justify-between content-center p-4 border-4 border-[var(--primary)]">
+			{/* bg-gradient-to-r from-gray-700 via-gray-900 to-black */}
 			{/* items-center justify-center w-2/2 */}
 			{/* xl:max-w-screen-xl lg:max-w-screen-xl */}
-			{/* <div className="bg-gray-400 h-10 flex flex-wrap mt-10 gap-x-4 gap-y-8 bl"></div> */}
+			{/* <div className="bg-[var(--primary)] h-10 flex flex-wrap mt-10 gap-x-4 gap-y-8 bl"></div> */}
 			{/*  mt-10 pt-2 / w-[100%] xl:h-[60px] lg:h[60px] py-[10px] pl-[2px] pr-[10px] items-center    */}
 			{/* <div className="justify-between flex items-start"> */}
 
 			{/* flex flex-wrap */}
 			{/* lg:block */}
 			{/* <div className="flex"> */}
-			<div className="flex">
+			<div className="flex ">
 				{/*text-sm lg:text-sm lg:text-lg xl:text-2xl lg:text-xl md:text-3xl lg:text-4xl */}
 				{/* className="" */}
 				<div className="editor-icons">
 					<button
 						onClick={() => editor.chain().focus().toggleBold().run()}
 						disabled={!editor.can().chain().focus().toggleBold().run()}
-						className={editor.isActive('bold') ? 'is-active' : 'text-gray-400'}>
+						className={
+							editor.isActive('bold') ? 'is-active' : 'text-[var(--primary)]'
+						}>
 						<FaBold className="text-sm xl:text-2xl lg:text-xl" />
 					</button>
 				</div>
@@ -51,7 +54,7 @@ const MenuBar = ({ editor }) => {
 						onClick={() => editor.chain().focus().toggleItalic().run()}
 						disabled={!editor.can().chain().focus().toggleItalic().run()}
 						className={
-							editor.isActive('italic') ? 'is-active' : 'text-gray-400'
+							editor.isActive('italic') ? 'is-active' : 'text-[var(--primary)]'
 						}>
 						<FaItalic className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
@@ -61,7 +64,7 @@ const MenuBar = ({ editor }) => {
 						onClick={() => editor.chain().focus().toggleStrike().run()}
 						disabled={!editor.can().chain().focus().toggleStrike().run()}
 						className={
-							editor.isActive('strike') ? 'is-active' : 'text-gray-400'
+							editor.isActive('strike') ? 'is-active' : 'text-[var(--primary)]'
 						}>
 						<FaStrikethrough className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
@@ -70,7 +73,9 @@ const MenuBar = ({ editor }) => {
 					<button
 						onClick={() => editor.chain().focus().toggleCode().run()}
 						disabled={!editor.can().chain().focus().toggleCode().run()}
-						className={editor.isActive('code') ? 'is-active' : 'text-gray-400'}>
+						className={
+							editor.isActive('code') ? 'is-active' : 'text-[var(--primary)]'
+						}>
 						<FaCode className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
 				</div>
@@ -84,7 +89,7 @@ const MenuBar = ({ editor }) => {
 						className={
 							editor.isActive('heading', { level: 1 })
 								? 'is-active'
-								: 'text-gray-400'
+								: 'text-[var(--primary)]'
 						}>
 						<FaHeading className="text-sm xl:text-2xl lg:text-xl" />
 					</button>
@@ -94,7 +99,9 @@ const MenuBar = ({ editor }) => {
 					<button
 						onClick={() => editor.chain().focus().toggleBulletList().run()}
 						className={
-							editor.isActive('bulletList') ? 'is-active' : 'text-gray-400'
+							editor.isActive('bulletList')
+								? 'is-active'
+								: 'text-[var(--primary)]'
 						}>
 						<FaListUl className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
@@ -103,7 +110,9 @@ const MenuBar = ({ editor }) => {
 					<button
 						onClick={() => editor.chain().focus().toggleOrderedList().run()}
 						className={
-							editor.isActive('orderedList') ? 'is-active' : 'text-gray-400'
+							editor.isActive('orderedList')
+								? 'is-active'
+								: 'text-[var(--primary)]'
 						}>
 						<GoListOrdered className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
@@ -112,7 +121,9 @@ const MenuBar = ({ editor }) => {
 					<button
 						onClick={() => editor.chain().focus().toggleCodeBlock().run()}
 						className={
-							editor.isActive('codeBlock') ? 'is-active' : 'text-gray-400'
+							editor.isActive('codeBlock')
+								? 'is-active'
+								: 'text-[var(--primary)]'
 						}>
 						<RiFileCodeLine className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
@@ -121,7 +132,9 @@ const MenuBar = ({ editor }) => {
 					<button
 						onClick={() => editor.chain().focus().toggleBlockquote().run()}
 						className={
-							editor.isActive('blockquote') ? 'is-active' : 'text-gray-400'
+							editor.isActive('blockquote')
+								? 'is-active'
+								: 'text-[var(--primary)]'
 						}>
 						<GrBlockQuote className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
@@ -130,7 +143,9 @@ const MenuBar = ({ editor }) => {
 					<button
 						onClick={() => editor.chain().focus().toggleUnderline().run()}
 						className={
-							editor.isActive('underline') ? 'is-active' : 'text-gray-400'
+							editor.isActive('underline')
+								? 'is-active'
+								: 'text-[var(--primary)]'
 						}>
 						<FaUnderline className="text-sm  xl:text-2xl lg:text-xl" />
 					</button>
@@ -140,7 +155,7 @@ const MenuBar = ({ editor }) => {
 			<div className=" ">
 				{/* flex justify-between */}
 				{/* flex  p-2 mt-10 bg-gray-4 oline-debug bg-debug */}
-				<div className="flex bg-gray-4">
+				<div className="flex text-[var(--primary)]">
 					<div className="editor-icons">
 						<button
 							onClick={() => editor.chain().focus().undo().run()}
@@ -176,10 +191,10 @@ export const Tiptap = ({ setDescription }) => {
 	});
 
 	return (
-		<div className="bg-gray-600 h-[30rem] rounded-xl focus:border-none overflow-auto">
+		<div className="bg-white h-[30rem] text-[var(--secondary)] focus:border-none overflow-auto ">
 			{/* focus:outline-none focus:ring-none focus:ring-blue-500 */}
 			<MenuBar editor={editor} />
-			<EditorContent editor={editor} className="p-5 text-white z-0" />
+			<EditorContent editor={editor} className="p-5 text-black z-0" />
 
 			<style>
 				{`.ProseMirror {

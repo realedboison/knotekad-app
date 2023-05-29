@@ -1,5 +1,7 @@
 @tailwind base;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 /* Firefox */
 * {
 	scrollbar-width: thin;
@@ -7,10 +9,12 @@
 }
 
 :root {
-	--primary: rebeccapurple;
-	--secondary: cornflowerblue;
+	--primary: indigo;
+	--secondary: #0badd0;
 	/* background-color: aqua; */
-	background-color: rgb(0, 0, 0);
+	background-color: #0badd0;
+	font-family: 'Poppins', sans-serif;
+	/* height: 100vw; */
 }
 
 /* Chrome, Edge, and Safari */
@@ -20,12 +24,12 @@
 
 *::-webkit-scrollbar-track {
 	background: var(--primary);
-	border-radius: 1rem;
+	/* border-radius: 1rem; */
 }
 
 *::-webkit-scrollbar-thumb {
 	background-color: var(--secondary);
-	border-radius: 1rem;
+	/* border-radius: 1rem; */
 	border: 3px solid var(--primary);
 }
 
@@ -34,14 +38,14 @@
 
 @layer components {
 	.editor-icons {
-		@apply flex p-2 items-center justify-center m-1 bg-black text-white border-solid border-2 rounded-md;
+		@apply flex p-2 items-center justify-center m-1 border-[var(--primary)] border-2;
 	}
 
-	.background-debug {
+	.bdg {
 		box-sizing: border-box;
 		background: rgba(255, 196, 0, 0.61) !important;
 	}
-	.outline-debug {
+	.odb {
 		outline: 5px solid rgba(255, 38, 0, 0.445) !important;
 	}
 }
