@@ -6,6 +6,12 @@ const MainMenu = () => {
 	const [isOpen, setIsOpen] = useState(false);
 	const menuRef = useRef(null);
 
+	const className = `${
+		isOpen ? 'visible' : 'invisible'
+	} absolute h-[900px] w-[480px] top-[105px] right-[-22px] bg-gray-800 text-white transition duration-500 ease-in-out transform ${
+		isOpen ? 'translate-y-0' : '-translate-y-0'
+	}`;
+
 	useEffect(() => {
 		const handleOutsideClick = event => {
 			if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -42,12 +48,7 @@ const MainMenu = () => {
 			</button>
 
 			{/* Menu items */}
-			<div
-				className={`${
-					isOpen ? 'visible' : 'invisible'
-				} absolute h-[900px] w-[480px] top-[105px] right-[-40px] bg-gray-800 text-white transition duration-500 ease-in-out transform ${
-					isOpen ? 'translate-y-0' : '-translate-y-0'
-				}`}>
+			<div className={className}>
 				<ul className="list-none flex flex-col items-center justify-center h-2/4">
 					<li className="my-4">
 						<a href="#" className="hover:text-gray-400">
