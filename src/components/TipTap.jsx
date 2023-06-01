@@ -25,7 +25,7 @@ const MenuBar = ({ editor }) => {
 	}
 
 	return (
-		<div className="sticky xl:max-w-screen-xl lg:max-w-screen-xl top-0 flex z-10 mt- justify-between content-center p-4 border-4 border-[var(--primary)]">
+		<div className="sticky xl:max-w-screen-xl lg:max-w-screen-xl top-0 flex z-10 mt- justify-between border-solid content-center p-4 border-2 border-b-[var(--primary)] border-t-white border-x-white bg-white">
 			{/* bg-gradient-to-r from-gray-700 via-gray-900 to-black */}
 			{/* items-center justify-center w-2/2 */}
 			{/* xl:max-w-screen-xl lg:max-w-screen-xl */}
@@ -36,7 +36,7 @@ const MenuBar = ({ editor }) => {
 			{/* flex flex-wrap */}
 			{/* lg:block */}
 			{/* <div className="flex"> */}
-			<div className="flex ">
+			<div className="flex flex-wrap">
 				{/*text-sm lg:text-sm lg:text-lg xl:text-2xl lg:text-xl md:text-3xl lg:text-4xl */}
 				{/* className="" */}
 				<div className="editor-icons">
@@ -85,7 +85,6 @@ const MenuBar = ({ editor }) => {
 						onClick={() =>
 							editor.chain().focus().toggleHeading({ level: 1 }).run()
 						}
-						// disabled={!editor.can().chain().focus().toggleCode().run()}
 						className={
 							editor.isActive('heading', { level: 1 })
 								? 'is-active'
@@ -172,9 +171,6 @@ const MenuBar = ({ editor }) => {
 					</div>
 				</div>
 			</div>
-			{/* </div> */}
-
-			{/* <div className="ml-auto flex"> */}
 		</div>
 	);
 };
@@ -191,14 +187,81 @@ export const Tiptap = ({ setDescription }) => {
 	});
 
 	return (
-		<div className="bg-white h-[30rem] text-[var(--secondary)] focus:border-none overflow-auto ">
+		<div className="bg-white h-[30rem] border-2 border-[var(--primary)] text-[var(--secondary)] focus:border-none overflow-auto ">
 			{/* focus:outline-none focus:ring-none focus:ring-blue-500 */}
 			<MenuBar editor={editor} />
 			<EditorContent editor={editor} className="p-5 text-black z-0" />
 
+			<p className="px-5 text-black">
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+				ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
+				dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+				ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+				quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
+				arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+				Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
+				dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
+				tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac,
+				enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+				Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean
+				imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper
+				ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus
+				eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing
+				sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar,
+				hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec
+				vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit
+				amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris
+				sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget
+				bibendum sodales, augue velit cursus nunc, quis gravida magna mi a
+				libero. Fusce vulputate eleifend sapien. Vestibulum purus quam,
+				scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in
+				dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante
+				ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
+				In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis
+				arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed
+				aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer
+				eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper
+				ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium
+				libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam
+				nulla eros, ultricies sit amet, nonummy id, imperdiet feugiat, pede. Sed
+				lectus. Donec mollis hendrerit risus. Phasellus nec sem in justo
+				pellentesque facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque.
+				Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.
+				Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
+				imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa. Sed
+				cursus turpis vitae tortor. Donec posuere vulputate arcu. Phasellus
+				accumsan cursus velit. Vestibulum ante ipsum primis in faucibus orci
+				luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis
+				porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis
+				orci. Phasellus consectetuer vestibulum elit. Aenean tellus metus,
+				bibendum sed, posuere ac, mattis non, vulputate lorem. Morbi nec metus.
+				Phasellus blandit leo ut odio. Maecenas ullamcorper, dui et placerat
+				feugiat, eros pede varius nisi, condimentum viverra felis nunc et lorem.
+				Sed magna purus, fermentum eu, tincidunt eu, varius ut, felis. In auctor
+				lobortis lacus. Quisque libero metus, condimentum nec, tempor a, commodo
+				mollis, magna. Vestibulum ullamcorper mauris at ligula. Fusce fermentum.
+				Nullam cursus lacinia erat. Praesent blandit laoreet nibh. Fusce
+				convallis metus id felis luctus adipiscing. Pellentesque egestas, neque
+				sit amet convallis pulvinar, justo nulla eleifend augue, ac auctor orci
+				leo non est. Quisque id mi. Ut tincidunt tincidunt erat. Etiam feugiat
+				lorem non metus. Vestibulum dapibus nunc ac augue. Curabitur vestibulum
+				aliquam leo. Praesent egestas neque eu enim. In hac habitasse platea
+				dictumst. Fusce a quam. Etiam ut purus mattis mauris sodales aliquam.
+				Curabitur nisi. Quisque malesuada placerat nisl. Nam ipsum risus, rutrum
+				vitae, vestibulum eu, molestie vel, lacus. Sed augue ipsum, egestas nec,
+				vestibulum et, malesuada adipiscing, dui. Vestibulum facilisis, purus
+				nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna
+				in dolor. Mauris sollicitudin fermentum libero. Praesent nonummy mi in
+				odio. Nunc interdum lacus sit amet orci. Vestibulum rutrum, mi nec
+				elementum vehicula, eros quam gravida nisl, id fringilla neque ante vel
+				mi. Morbi mollis tellus ac sapien. Phasellus volutpat, metus eget
+				egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut
+				lacus. Fusce vel dui. Sed
+			</p>
+
 			<style>
 				{`.ProseMirror {
-              background-color: transparent;
+              background-color: none;
               border: none;
               outline: none; 
               resize: none;}`}

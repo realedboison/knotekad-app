@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Knotekad from '../assets/knotekad.png';
+import LogoSub from '../assets/logo-sub.png';
 import Menu from './Menu';
 import SearchBar from './Search';
 import { Tiptap } from './TipTap';
@@ -13,33 +15,45 @@ function Layout() {
 	return (
 		// CONTAINER ---
 		// min-h-screen
-		<div className="mx-auto min-h-screen lg:max-w-screen-xl">
+		// lg:max-w-screen-xl
+		<div className="mx-auto h-min lg:max-w-screen-xl">
 			{/* overflow-hidden */}
 			{/* lg:max-w-screen-xl - lg:max-w-screen-xl  */}
 			{/*   xl:mt-16  */}
-			<div class="mx-a h-[700px]">
+			<div class="mx-auto h-[700px]">
 				{/* mb-20 */}
 				{/* ---------- MENU ---------- */}
-				<div class="p-5 text-[var(--primary)] flex justify-between items-center my-4 border-4 border-[var(--primary)] min-w-full ">
-					<h1 class="text-4xl ">😂</h1>
-
-					<div class="hidden md:block">Lorem ipsum dolor sit amad.</div>
+				<div class="p-5 text-[var(--primary)] flex justify-between items-center my-4 border-2 border-[var(--primary)] min-w-full ">
+					{/* <h1 class="text-4xl ">😂</h1> */}
+					<img
+						src={LogoSub}
+						alt="Logo"
+						className="w-20 h-15 cursor-pointer pl-[2px]"
+					/>
+					{/* <div class="hidden md:block">Lorem ipsum dolor sit amad.</div> */}
+					<img
+						src={Knotekad}
+						alt="knotekad"
+						className="w-50 h-15 hidden md:block"
+					/>
 
 					<div class="flex">
-						<div>
+						{/* <div>
 							<p class="hidden md:block">Lorem, ipsum.</p>
-						</div>
+						</div> */}
 						<nav>
 							<Menu />
 						</nav>
 					</div>
 				</div>
 				{/* ------------ MAIN EDITOR ------------------- */}
-
-				<div class="grid  grid-rows-3 gap-4 md:grid-cols-3">
+				{/* grid-rows-3 grid-rows-1 md:grid-cols-3*/}
+				{/* grid grid-col gap-4 */}
+				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
+					{/* grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 */}
 					{/* md:grid-rows */}
 					{/* xl:max-w-screen-xl lg:max-w-screen-xl h-[620px]*/}
-					<div class="px-5 pt-5 md:col-span-2 border-4 border-[var(--primary)]  h-[600px] min-w-full ">
+					<div class="px-5 pt-5 md:col-span-2 border-2 border-[var(--primary)] h-[600px]">
 						{/*  */}
 						<div>
 							{/* ------- EDITOR --------- */}
@@ -67,7 +81,7 @@ function Layout() {
 
 					{/* ------------- SEARCH THEME AREA --------------- */}
 					{/* h-[620px] */}
-					<div class="col-span bg-[var(--secondary)] h-[600px] border-4 border-[var(--primary)]">
+					<div class="col-span bg-[var(--secondary)] h-[600px] border-2 border-[var(--primary)]">
 						<div className="px-5 py-6 bg-[var(--primary)]">
 							<h3 class="pt-  border-[var(--primary)] text-white">
 								{/* Search Theme */}
@@ -78,8 +92,8 @@ function Layout() {
 								<SearchBar />
 							</div>
 						</div>
-						<p className="pl-5 pt-4 pb-4 w- pr-5 h-[472px] overflow-auto mt-5 bg-white border-y-4 border-[var(--primary)]">
-							{/* Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
+						<p className="pl-5 pt-4 pb-4 w- pr-5 h-[452px] overflow-auto mt-5 bg-white border-y-2 border-[var(--primary)]">
+							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
 							commodo ligula eget dolor. Aenean massa. Cum sociis natoque
 							penatibus et magnis dis parturient montes, nascetur ridiculus mus.
 							Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
@@ -148,7 +162,7 @@ function Layout() {
 							vehicula, eros quam gravida nisl, id fringilla neque ante vel mi.
 							Morbi mollis tellus ac sapien. Phasellus volutpat, metus eget
 							egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut
-							lacus. Fusce vel dui. Sed */}
+							lacus. Fusce vel dui. Sed
 						</p>
 					</div>
 				</div>

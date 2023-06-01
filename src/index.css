@@ -9,12 +9,20 @@
 }
 
 :root {
-	--primary: indigo;
-	--secondary: #0badd0;
-	/* background-color: aqua; */
-	background-color: #0badd0;
-	font-family: 'Poppins', sans-serif;
+	/* --primary: teal; */
+	/* --secondary: #fefae7; */
+	/* background-color: #fefae7; */
+
+	--primary: black;
+	--secondary: #b3b3de;
+	background-color: #b3b3de;
+
+	/* background-color: #0badd0; */
 	/* height: 100vw; */
+	/* --primary: indigo; */
+	/* --secondary: #0badd0; */
+
+	font-family: 'Poppins', sans-serif;
 }
 
 /* Chrome, Edge, and Safari */
@@ -30,7 +38,8 @@
 *::-webkit-scrollbar-thumb {
 	background-color: var(--secondary);
 	/* border-radius: 1rem; */
-	border: 3px solid var(--primary);
+	/* border-right: 3px solid var(--primary); */
+	border-left: 3px solid var(--primary);
 }
 
 @tailwind components;
@@ -38,7 +47,7 @@
 
 @layer components {
 	.editor-icons {
-		@apply flex p-2 items-center justify-center m-1 border-[var(--primary)] border-2;
+		@apply flex p-2 items-center bg-white justify-center m-1 border-[var(--primary)] border-2;
 	}
 
 	.bdg {
