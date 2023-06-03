@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Knotekad from '../assets/knotekad.png';
 import LogoSub from '../assets/logo-sub.png';
 import Menu from './Menu';
+import MenuTwo from './menuTwo';
 import SearchBar from './Search';
 import { Tiptap } from './TipTap';
 
@@ -20,40 +21,37 @@ function Layout() {
 			{/* overflow-hidden */}
 			{/* lg:max-w-screen-xl - lg:max-w-screen-xl  */}
 			{/*   xl:mt-16  */}
-			<div class="mx-auto h-[700px]">
+			<div className="mx-auto h-[700px]">
 				{/* mb-20 */}
 				{/* ---------- MENU ---------- */}
-				<div class="p-5 text-[var(--primary)] flex justify-between items-center my-4 border-2 border-[var(--primary)] min-w-full ">
-					{/* <h1 class="text-4xl ">😂</h1> */}
+				<div className="p-5 text-[var(--primary)] flex justify-between items-center my-4 border-2 border-[var(--primary)] min-w-full ">
+					{/* <h1 className="text-4xl ">😂</h1> */}
 					<img
 						src={LogoSub}
 						alt="Logo"
-						className="w-20 h-15 cursor-pointer pl-[2px]"
+						className="w-20 cursor-pointer pl-[2px]"
 					/>
-					{/* <div class="hidden md:block">Lorem ipsum dolor sit amad.</div> */}
-					<img
-						src={Knotekad}
-						alt="knotekad"
-						className="w-50 h-15 hidden md:block"
-					/>
+					{/* <div className="hidden md:block">Lorem ipsum dolor sit amad.</div> */}
+					<img src={Knotekad} alt="knotekad" className="w-50 hidden md:block" />
 
-					<div class="flex">
+					<div className="flex">
 						{/* <div>
-							<p class="hidden md:block">Lorem, ipsum.</p>
+							<p className="hidden md:block">Lorem, ipsum.</p>
 						</div> */}
 						<nav>
 							<Menu />
+							{/* <MenuTwo /> */}
 						</nav>
 					</div>
 				</div>
 				{/* ------------ MAIN EDITOR ------------------- */}
 				{/* grid-rows-3 grid-rows-1 md:grid-cols-3*/}
 				{/* grid grid-col gap-4 */}
-				<div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
+				<div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
 					{/* grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 */}
 					{/* md:grid-rows */}
 					{/* xl:max-w-screen-xl lg:max-w-screen-xl h-[620px]*/}
-					<div class="px-5 pt-5 md:col-span-2 border-2 border-[var(--primary)] h-[600px]">
+					<div className="px-5 pt-5 md:col-span-2 border-2 border-[var(--primary)] h-[600px]">
 						{/*  */}
 						<div>
 							{/* ------- EDITOR --------- */}
@@ -81,9 +79,9 @@ function Layout() {
 
 					{/* ------------- SEARCH THEME AREA --------------- */}
 					{/* h-[620px] */}
-					<div class="col-span bg-[var(--secondary)] h-[600px] border-2 border-[var(--primary)]">
+					<div className="col-span bg-[var(--secondary)] h-[600px] border-2 border-[var(--primary)]">
 						<div className="px-5 py-6 bg-[var(--primary)]">
-							<h3 class="pt-  border-[var(--primary)] text-white">
+							<h3 className="pt-  border-[var(--primary)] text-white">
 								{/* Search Theme */}
 							</h3>
 							{/* className="bg-gradient-to-l from-blue-900 to-blue-600 border- border-
