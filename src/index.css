@@ -9,21 +9,20 @@
 }
 
 :root {
-	/* --primary: teal; */
-	/* --secondary: #fefae7; */
-	/* background-color: #fefae7; */
+
 
 	--primary: black;
 	--secondary: #b3b3de;
 	background-color: #b3b3de;
 
-	/* background-color: #0badd0; */
-	/* height: 100vw; */
-	/* --primary: indigo; */
-	/* --secondary: #0badd0; */
+	--lighter:#dcdcf0;
+	--darker: #8a8acc
+	--darkest:#6161ba
 
 	font-family: 'Poppins', sans-serif;
 }
+
+
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
@@ -47,9 +46,33 @@
 
 @layer components {
 	.editor-icons {
-		@apply flex p-2 items-center bg-white justify-center m-1 border-[var(--primary)] border-2;
+		@apply m-1 flex items-center justify-center border-2 border-[var(--primary)] bg-white p-2;
 	}
-
+	.button-delete {
+		@apply cursor-pointer border-x-2 border-r-2 border-black bg-white py-2 px-5 transition duration-300 hover:bg-[var(--primary)] hover:text-white focus:bg-[#8a8acc];
+	}
+	.button-edit {
+		@apply cursor-pointer border-x-2 border-black bg-white py-2 px-5 transition duration-300 hover:bg-[var(--primary)] hover:text-white focus:bg-[#8a8acc];
+	}
+	.button-save {
+		@apply cursor-pointer border-l-2 border-black bg-white py-2 px-5 transition duration-300 hover:bg-[var(--primary)] hover:text-white focus:bg-[#8a8acc];
+	}
+	.hamburger-menu {
+		@apply z-30 absolute h-[580px] w-[300px] md:w-[432px] md:left-[-350px] left-[-219px] mx-auto top-[110px] right-80 bg-[var(--secondary)] border-2 border-[var(--primary)] text-white transform overflow-auto;
+	}
+	.tiptap-navbar {
+		@apply sticky top-0 z-10 flex content-center justify-between border-2 border-solid border-x-white border-b-[var(--primary)] border-t-white bg-white p-4 lg:max-w-screen-xl xl:max-w-screen-xl
+	}
+	.nav-bar {
+		@apply my-4 flex min-w-full items-center justify-between border-2 border-[var(--primary)] p-5 text-[var(--primary)] sm:border-x-[var(--secondary)];
+	}
+	.search-input {
+		@apply text-lg w-full border-2 border-white px-4 py-4 text-gray-800 focus:outline-none lg:border-none xl:text-xl;
+	}
+	.search-main {
+		@apply text-lg xl:text-xl text-gray-800  mt-5 h-[452px] overflow-auto border-y-2 border-[var(--primary)] bg-white pl-5 pt-4 pb-4 pr-5;
+	}
+/* DEBUGGING */
 	.bdg {
 		box-sizing: border-box;
 		background: rgba(255, 196, 0, 0.61) !important;

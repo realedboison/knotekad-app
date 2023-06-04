@@ -7,10 +7,10 @@ function SearchBar() {
 			<input
 				type="text"
 				placeholder="Search Theme..."
-				className="border-solid p-4 focus:outline-none w-full  "
+				className="search-input"
 			/>
-			<button className="border-white border-solid bg--[var(--primary)] border-2 py-4 px-4 ">
-				<BiSearch size={20} className="text-[var(--secondary)]" />
+			<button className="bg--[var(--primary)] border-2 border-white py-[18px] px-[18px] lg:px-[16px] lg:py-[16px]">
+				<BiSearch size={24} className="text-[var(--secondary)]" />
 			</button>
 		</div>
 	);

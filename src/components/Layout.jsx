@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { RiDeleteBinLine, RiSave3Line } from 'react-icons/Ri';
 
+import { FaRegEdit } from 'react-icons/fa';
 import Knotekad from '../assets/knotekad.png';
 import LogoSub from '../assets/logo-sub.png';
 import Menu from './Menu';
-import MenuTwo from './menuTwo';
 import SearchBar from './Search';
 import { Tiptap } from './TipTap';
 
@@ -14,157 +15,84 @@ function Layout() {
 	const [description, setDescription] = useState('');
 
 	return (
-		// CONTAINER ---
-		// min-h-screen
-		// lg:max-w-screen-xl
 		<div className="mx-auto h-min lg:max-w-screen-xl">
-			{/* overflow-hidden */}
-			{/* lg:max-w-screen-xl - lg:max-w-screen-xl  */}
-			{/*   xl:mt-16  */}
-			<div className="mx-auto h-[700px]">
-				{/* mb-20 */}
+			<main className="mx-auto h-[700px]">
 				{/* ---------- MENU ---------- */}
-				<div className="p-5 text-[var(--primary)] flex justify-between items-center my-4 border-2 border-[var(--primary)] min-w-full ">
-					{/* <h1 className="text-4xl ">😂</h1> */}
+				<div className="nav-bar">
 					<img
 						src={LogoSub}
 						alt="Logo"
-						className="w-20 cursor-pointer pl-[2px]"
+						className=" w-20 cursor-pointer pl-[2px]"
 					/>
-					{/* <div className="hidden md:block">Lorem ipsum dolor sit amad.</div> */}
+
 					<img src={Knotekad} alt="knotekad" className="w-50 hidden md:block" />
 
 					<div className="flex">
-						{/* <div>
-							<p className="hidden md:block">Lorem, ipsum.</p>
-						</div> */}
 						<nav>
 							<Menu />
-							{/* <MenuTwo /> */}
 						</nav>
 					</div>
 				</div>
 				{/* ------------ MAIN EDITOR ------------------- */}
-				{/* grid-rows-3 grid-rows-1 md:grid-cols-3*/}
-				{/* grid grid-col gap-4 */}
+
 				<div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3">
-					{/* grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 */}
-					{/* md:grid-rows */}
-					{/* xl:max-w-screen-xl lg:max-w-screen-xl h-[620px]*/}
-					<div className="px-5 pt-5 md:col-span-2 border-2 border-[var(--primary)] h-[600px]">
+					<div className="h-[600px] border-2 border-[var(--primary)] px-5 pt-5 md:col-span-2">
 						{/*  */}
 						<div>
 							{/* ------- EDITOR --------- */}
-							<Tiptap setDescription={setDescription} />
+							<div>
+								<Tiptap setDescription={setDescription} />
+
+								<div className="flex justify-between border-2 border-t-0 border-[var(--primary)]">
+									<button className="button-delete border-l-0">
+										<div className="flex gap-2">
+											<RiDeleteBinLine size={30} />
+											<p className="hidden text-2xl font-medium uppercase md:block">
+												delete
+											</p>
+										</div>
+									</button>
+									{/* md:gap-3 */}
+
+									<button className="button-edit">
+										<div className="flex gap-2">
+											<FaRegEdit size={30} />
+											<p className="hidden text-2xl font-medium uppercase md:block ">
+												edit
+											</p>
+										</div>
+									</button>
+									<button className="button-save">
+										<div className="flex gap-2">
+											<RiSave3Line size={30} />
+											<p className="hidden text-2xl font-medium uppercase md:block">
+												Save
+											</p>
+										</div>
+									</button>
+								</div>
+							</div>
 							{/* ------- OUTPUT --------- */}
 							{/* <div className="mt-20 bg-gray-500 h-[30rem] rounded-xl focus:border-none overflow">
 								<EditorOutput description={description} />
 							</div> */}
 							{/* ---------- BUTTONS ---------- */}
-							<div className="flex justify-between mt-5">
-								<div className="bg-[var(--secondary)] py-2 px-5 cursor-pointer">
-									hi
-								</div>
-								<div className="flex gap-3">
-									<div className="bg-[var(--secondary)] py-2 px-5 cursor-pointer">
-										hey
-									</div>
-									<div className="bg-[var(--secondary)] py-2 px-5 cursor-pointer">
-										hello
-									</div>
-								</div>
-							</div>
 						</div>
 					</div>
 
 					{/* ------------- SEARCH THEME AREA --------------- */}
 					{/* h-[620px] */}
-					<div className="col-span bg-[var(--secondary)] h-[600px] border-2 border-[var(--primary)]">
-						<div className="px-5 py-6 bg-[var(--primary)]">
-							<h3 className="pt-  border-[var(--primary)] text-white">
-								{/* Search Theme */}
-							</h3>
-							{/* className="bg-gradient-to-l from-blue-900 to-blue-600 border- border-
-						 pb-2 rounded-xl" */}
+					<div className="col-span h-[600px] border-2 border-[var(--primary)] bg-[var(--secondary)]">
+						<div className="bg-[var(--primary)] px-5 py-6">
+							<h3 className="pt-  border-[var(--primary)] text-gray-800"></h3>
 							<div className="">
 								<SearchBar />
 							</div>
 						</div>
-						<p className="pl-5 pt-4 pb-4 w- pr-5 h-[452px] overflow-auto mt-5 bg-white border-y-2 border-[var(--primary)]">
-							Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-							commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-							penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-							Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-							sem. Nulla consequat massa quis enim. Donec pede justo, fringilla
-							vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-							imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
-							mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum
-							semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula,
-							porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem
-							ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus
-							viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean
-							imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper
-							ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus,
-							tellus eget condimentum rhoncus, sem quam semper libero, sit amet
-							adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus
-							pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt
-							tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam
-							quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis
-							leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis
-							magna. Sed consequat, leo eget bibendum sodales, augue velit
-							cursus nunc, quis gravida magna mi a libero. Fusce vulputate
-							eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis
-							sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras
-							ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum
-							primis in faucibus orci luctus et ultrices posuere cubilia Curae;
-							In ac dui quis mi consectetuer lacinia. Nam pretium turpis et
-							arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet
-							iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu,
-							accumsan a, consectetuer eget, posuere ut, mauris. Praesent
-							adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy
-							metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut
-							eros et nisl sagittis vestibulum. Nullam nulla eros, ultricies sit
-							amet, nonummy id, imperdiet feugiat, pede. Sed lectus. Donec
-							mollis hendrerit risus. Phasellus nec sem in justo pellentesque
-							facilisis. Etiam imperdiet imperdiet orci. Nunc nec neque.
-							Phasellus leo dolor, tempus non, auctor et, hendrerit quis, nisi.
-							Curabitur ligula sapien, tincidunt non, euismod vitae, posuere
-							imperdiet, leo. Maecenas malesuada. Praesent congue erat at massa.
-							Sed cursus turpis vitae tortor. Donec posuere vulputate arcu.
-							Phasellus accumsan cursus velit. Vestibulum ante ipsum primis in
-							faucibus orci luctus et ultrices posuere cubilia Curae; Sed
-							aliquam, nisi quis porttitor congue, elit erat euismod orci, ac
-							placerat dolor lectus quis orci. Phasellus consectetuer vestibulum
-							elit. Aenean tellus metus, bibendum sed, posuere ac, mattis non,
-							vulputate lorem. Morbi nec metus. Phasellus blandit leo ut odio.
-							Maecenas ullamcorper, dui et placerat feugiat, eros pede varius
-							nisi, condimentum viverra felis nunc et lorem. Sed magna purus,
-							fermentum eu, tincidunt eu, varius ut, felis. In auctor lobortis
-							lacus. Quisque libero metus, condimentum nec, tempor a, commodo
-							mollis, magna. Vestibulum ullamcorper mauris at ligula. Fusce
-							fermentum. Nullam cursus lacinia erat. Praesent blandit laoreet
-							nibh. Fusce convallis metus id felis luctus adipiscing.
-							Pellentesque egestas, neque sit amet convallis pulvinar, justo
-							nulla eleifend augue, ac auctor orci leo non est. Quisque id mi.
-							Ut tincidunt tincidunt erat. Etiam feugiat lorem non metus.
-							Vestibulum dapibus nunc ac augue. Curabitur vestibulum aliquam
-							leo. Praesent egestas neque eu enim. In hac habitasse platea
-							dictumst. Fusce a quam. Etiam ut purus mattis mauris sodales
-							aliquam. Curabitur nisi. Quisque malesuada placerat nisl. Nam
-							ipsum risus, rutrum vitae, vestibulum eu, molestie vel, lacus. Sed
-							augue ipsum, egestas nec, vestibulum et, malesuada adipiscing,
-							dui. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi
-							congue nunc, vitae euismod ligula urna in dolor. Mauris
-							sollicitudin fermentum libero. Praesent nonummy mi in odio. Nunc
-							interdum lacus sit amet orci. Vestibulum rutrum, mi nec elementum
-							vehicula, eros quam gravida nisl, id fringilla neque ante vel mi.
-							Morbi mollis tellus ac sapien. Phasellus volutpat, metus eget
-							egestas mollis, lacus lacus blandit dui, id egestas quam mauris ut
-							lacus. Fusce vel dui. Sed
-						</p>
+						<p className="search-main"></p>
 					</div>
 				</div>
-			</div>
+			</main>
 		</div>
 	);
 }
